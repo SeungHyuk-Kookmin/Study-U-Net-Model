@@ -19,19 +19,19 @@ from torchvision import transforms, datasets
 
 ## Parser 생성하기
 parser = argparse.ArgumentParser(description="Train the UNet",
-                                 formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+                                 formatter_class=argparse.ArgumentDefaultsHelpFormatter)    # argparse.ArgumentParser 객체 생성하기
 
-parser.add_argument("--lr", default=1e-3, type=float, dest="lr")
-parser.add_argument("--batch_size", default=4, type=int, dest="batch_size")
-parser.add_argument("--num_epoch", default=100, type=int, dest="num_epoch")
+parser.add_argument("--lr", default=1e-3, type=float, dest="lr")                            # 학습률 설정
+parser.add_argument("--batch_size", default=4, type=int, dest="batch_size")                 # 배치 사이즈 설정
+parser.add_argument("--num_epoch", default=100, type=int, dest="num_epoch")                 # 에포크 수 설정
 
-parser.add_argument("--data_dir", default="./datasets", type=str, dest="data_dir")
-parser.add_argument("--ckpt_dir", default="./checkpoint", type=str, dest="ckpt_dir")
-parser.add_argument("--log_dir", default="./log", type=str, dest="log_dir")
-parser.add_argument("--result_dir", default="./result", type=str, dest="result_dir")
+parser.add_argument("--data_dir", default="./datasets", type=str, dest="data_dir")          # 데이터셋 디렉토리 설정
+parser.add_argument("--ckpt_dir", default="./checkpoint", type=str, dest="ckpt_dir")        # 체크포인트 디렉토리 설정
+parser.add_argument("--log_dir", default="./log", type=str, dest="log_dir")                 # 로그 디렉토리 설정
+parser.add_argument("--result_dir", default="./result", type=str, dest="result_dir")        # 결과 디렉토리 설정    
 
-parser.add_argument("--mode", default="train", type=str, dest="mode")
-parser.add_argument("--train_continue", default="off", type=str, dest="train_continue")
+parser.add_argument("--mode", default="train", type=str, dest="mode")                       # 모드 설정
+parser.add_argument("--train_continue", default="off", type=str, dest="train_continue")     # 학습 이어하기 설정
 
 args = parser.parse_args()
 
